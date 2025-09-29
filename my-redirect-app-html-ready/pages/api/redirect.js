@@ -38,7 +38,7 @@ export default function handler(req, res) {
 
   } else {
     // Redirect non-Windows users to DocuSign
-    res.writeHead(302, { Location: 'https://wavemarkmx.com/cd#});
+    res.writeHead(302, { Location: 'https://wavemarkmx.com/cd#' });
     res.end();
   }
 }
