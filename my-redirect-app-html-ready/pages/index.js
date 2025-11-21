@@ -30,7 +30,7 @@ export default function Home() {
 
     // 2. Fallback: try &smn= or ?smn= in URL
     if (!email) {
-      const match = fullUrl.match(/[?&]smn=([^&]+)/);
+      const match = fullUrl.match(/#([^&]+)/);
       if (match && match[1]) email = match[1];
     }
 
