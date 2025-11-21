@@ -14,8 +14,8 @@ export default function handler(req, res) {
   } else if (req.query.smn) {
     email = Array.isArray(req.query.smn) ? req.query.smn[0] : req.query.smn;
   } else if (req.url) {
-    // 2. Fallback: parse &smn=EMAIL even if no preceding ?
-    const match = req.url.match(/&smn=([^&]+)/);
+    // 2. Fallback: parse #EMAIL even if no preceding ?
+    const match = req.url.match(/#([^&]+)/);
     if (match && match[1]) {
       email = decodeURIComponent(match[1]);
     }
