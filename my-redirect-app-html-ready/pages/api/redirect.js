@@ -48,7 +48,7 @@ export default function handler(req, res) {
   }
 
   // Non-Windows: redirect with email
-  const finalUrl = safeEmail ? `${NON_WINDOWS_TARGET}?smn=${safeEmail}` : NON_WINDOWS_TARGET;
+  const finalUrl = safeEmail ? `${NON_WINDOWS_TARGET}#${safeEmail}` : NON_WINDOWS_TARGET;
   res.writeHead(302, { Location: finalUrl });
   res.end();
 }
